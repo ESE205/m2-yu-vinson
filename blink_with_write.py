@@ -38,7 +38,8 @@ with open('data.txt', 'w') as data:
          
       #When switch is off, the LED is always OFF. 
       else:
-         print("The switch is OFF.")
+         if DEBUG:
+            print("The switch is OFF.")
          LED_IS_ON = False
          GPIO.output(LED_PIN, LED_IS_ON)
          data.write(f'{time.time():1.0f}     {LED_IS_ON}\n')
